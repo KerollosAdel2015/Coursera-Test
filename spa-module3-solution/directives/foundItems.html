@@ -1,0 +1,22 @@
+<div class="container">
+  <h2><div class="error" ng-if="list.items.length <= 0">Nothing found</div></h2>
+
+  <table class="table" ng-if="list.items.length > 0">
+    <thead>
+      <tr>
+        <th>Sequence #</th>
+        <th>Item ID</th>
+        <th>Item Name</th>
+        <th>Remove Item</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="category in list.items">
+        <td>{{$index + 1}}</td>
+        <td>{{ category.id }}</td>
+        <td> ( {{category.short_name}}) {{ category.name }}</td>
+        <td><button ng-click="list.onRemove({index: $index});">Remove Item</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
