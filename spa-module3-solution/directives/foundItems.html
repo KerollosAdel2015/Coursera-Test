@@ -4,9 +4,10 @@
   <table class="table" ng-if="list.items.length > 0">
     <thead>
       <tr>
-        <th>Sequence #</th>
-        <th>Item ID</th>
+        <th>Seq#</th>
+        <th>ID</th>
         <th>Item Name</th>
+        <th>Description</th>
         <th>Remove Item</th>
       </tr>
     </thead>
@@ -15,6 +16,7 @@
         <td>{{$index + 1}}</td>
         <td>{{ category.id }}</td>
         <td> ( {{category.short_name}}) {{ category.name }}</td>
+        <td>{{ category.description }}</td>
         <td><button ng-click="list.onRemove({index: $index});">Remove Item</button></td>
       </tr>
     </tbody>

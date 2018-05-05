@@ -43,12 +43,14 @@
 
             // get items from service
             promise.then(function (response) {
+
+
                 if (searchTerm != ""){
-                    for (var index = 0; index < response.data.length; index++) {
-                        var name = response.data[index].name;
+                    for (var index = 0; index < response.data.menu_items.length; index++) {
+                        var name = response.data.menu_items[index].description;
 
                         if (name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                            items.push(response.data[index]);
+                            items.push(response.data.menu_items[index]);
                         }
                     }
                }
@@ -62,7 +64,7 @@
         }
 
         service.getMatchedMenu = function () {
-            var response = $http({ method: "GET", url: (ApiSrvURL + "/categories.json") });
+            var response = $http({ method: "GET", url: (ApiSrvURL + "/menu_items.json") });
             return response;
         };
 
