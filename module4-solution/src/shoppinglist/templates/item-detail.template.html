@@ -1,0 +1,60 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img alt="Brand" src="images/lunch-menu.png" id="log">  Welcome to our Restaurant
+            </a>
+        </div>
+    </div>
+</nav>
+<ol class="breadcrumb">
+    <li><a ui-sref="home">Home</a></li>
+    <li><a ui-sref="mainList">Categories</a></li>
+    <li class="active">{{ itemDetail.name }}</li>
+</ol>
+
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Item id</label>
+        <div class="col-sm-10">
+            <p class="form-control-static">{{ itemDetail.id }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Item Short Name</label>
+        <div class="col-sm-10">
+            <p class="form-control-static">{{ itemDetail.short_name }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Item Description</label>
+        <div class="col-sm-10">
+            <p class="form-control-static">{{ itemDetail.description }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Item Price Small</label>
+        <div class="col-sm-10">
+            <p class="form-control-static"> {{ itemDetail.price_small }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Item Price Large</label>
+        <div class="col-sm-10">
+            <p class="form-control-static">{{ itemDetail.price_large }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Item Small Portion Name</label>
+        <div class="col-sm-10">
+            <p class="form-control-static">{{ itemDetail.small_portion_name }}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Item Large Portion Name</label>
+        <div class="col-sm-10">
+            <p class="form-control-static">{{ itemDetail.large_portion_name }}</p>
+        </div>
+    </div>
+</form>
+

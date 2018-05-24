@@ -1,0 +1,21 @@
+<div class="bs-example" data-example-id="panel-without-body-with-table">
+    <div class="panel panel-default"> 
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Short Name</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in $ctrl.items" ui-sref="itemDetail({itemId: $index})">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.short_name }}</td>
+                    <td>{{ item.name }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 
