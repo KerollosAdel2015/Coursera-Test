@@ -8,7 +8,7 @@
     MainShoppingListController.$inject = ['items'];
     function MainShoppingListController(items) {
         var mainList = this;
-        mainList.items = items;
+        mainList.items = items; 
     }
 
 })();

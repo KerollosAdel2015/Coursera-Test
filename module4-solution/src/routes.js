@@ -31,21 +31,20 @@
             }
         })
 
-        .state('itemDetail', {
-            url: '/item-detail/{itemId}',
-            templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
-            controller: 'ItemDetailController as itemDetail',
-            resolve: {
-                item: ['$stateParams', 'ShoppingListService',
-                      function ($stateParams, ShoppingListService) {
-                          return ShoppingListService.getItems()
-                            .then(function (items) {
-                                console.log(items[$stateParams.itemId]);
-                                return items[$stateParams.itemId];
-                            });
-                      }], 
-            }
-        });
+  .state('itemDetail', {
+      url: '/item-detail/{categoryId}',
+      templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
+      controller: 'ItemDetailController as itemDetail',
+      resolve: {
+          items: ['$stateParams', 'ShoppingListService', function ($stateParams, ShoppingListService) {
+              return ShoppingListService.getSubItems($stateParams.categoryId);
+          }],
+          CategoryName: ['$stateParams', 'ShoppingListService', function ($stateParams, ShoppingListService) { 
+              return $stateParams.categoryId;
+          }],
+      }
+  });
+
     }
 
 })();
