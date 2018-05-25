@@ -1,0 +1,53 @@
+<div class="container">
+    <h2 id="menu-categories-title">Welcome {{myInfoCtrl.user.firstName}} {{myInfoCtrl.user.lastName}} </h2>
+    <span>
+        Next data is your enterd data in sing up form ( if there are update you can us sign up form)
+    </span>
+    
+    <hr />
+
+    <div ng-hide="myInfoCtrl.user">
+        <div>Opppppppppppps</div>
+        <br />
+        <span>Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a> </span>
+    </div>
+
+    <table ng-show="myInfoCtrl.user">
+        <tr>
+            <td>First Name </td>
+            <td>:</td>
+            <td><strong>{{myInfoCtrl.user.firstName}}</strong></td>
+        </tr>
+        <tr>
+            <td>Last Name </td>
+            <td>:</td>
+            <td><strong>{{myInfoCtrl.user.lastName}}</strong></td>
+        </tr>
+        <tr>
+            <td>Email Address </td>
+            <td>:</td>
+            <td><strong>{{myInfoCtrl.user.emailAddress}}</strong></td>
+        </tr>
+        <tr>
+            <td>Phone Number </td>
+            <td>:</td>
+            <td><strong>{{myInfoCtrl.user.phoneNumber}}</strong></td>
+        </tr>
+        <tr>
+            <td>Favorite Dish</td>
+            <td>:</td>
+            <td><strong>{{myInfoCtrl.user.userDish.name}}</strong></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><strong>{{myInfoCtrl.user.userDish.description}}</strong></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><img src="/images/menu/{{myInfoCtrl.user.userDish.imgName}}/{{myInfoCtrl.user.userDish.imgName}}.jpg" /></td>
+        </tr>
+    </table>  
+    
+</div>

@@ -1,0 +1,77 @@
+<div class="container">
+    <h2 id="menu-categories-title">New Member Registration Form</h2>
+    <div>
+        Enter Your Inforatiom To Can Get All New About Us
+    </div>
+
+    <fieldset>
+        <div>
+            Registration Form {{signupCtrl.Name}}
+        </div>
+        <hr />
+        <form name='regForm' novalidate>
+            <table>
+                <tr>
+                    <td>First Name *</td>
+                    <td>:</td>
+                    <td><input type="text" name="firstName" ng-model="signupCtrl.user.firstName" required></td>
+                    <td>
+                        <span ng-if="regForm.firstName.$error.required && regForm.firstName.$touched" class="error">
+                            Must Enter First Name
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Name *</td>
+                    <td>:</td>
+                    <td><input type="text" name="lastName" ng-model="signupCtrl.user.lastName" required></td>
+                    <td>
+                        <span ng-if="regForm.lastName.$error.required && regForm.lastName.$touched" class="error">
+                            Must Enter Last Name
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email Address *</td>
+                    <td>:</td>
+                    <td><input type="email" name="emailAddress" ng-model="signupCtrl.user.emailAddress" required></td>
+                    <td>
+                        <span ng-if="regForm.emailAddress.$invalid && regForm.emailAddress.$touched" class="error">
+                            Must be a valid email address: handle@domain format
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone Number *</td>
+                    <td>:</td>
+                    <td><input type="text" name="phoneNumber" ng-model="signupCtrl.user.phoneNumber" required></td>
+                    <td>
+                        <span ng-if="regForm.phoneNumber.$error.required && regForm.phoneNumber.$touched" class="error">
+                            Must Enter Phone Numer
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Favorite Dish Ref</td>
+                    <td>:</td>
+                    <td><input type="text" name="favoriteDishRef" ng-blur='signupCtrl.checkFavoriteDish()' ng-model="signupCtrl.user.favoriteDishRef"></td>
+                    <td>
+                        <span ng-show="signupCtrl.dishErrorMessage" class="error">
+                            {{signupCtrl.dishErrorMessage}}
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> </td>
+                    <td>
+                        <button type="submit" ng-disabled="regForm.$invalid || signupCtrl.dishErrorMessage" ng-click="signupCtrl.Registration()">
+                            Submit
+                        </button>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>  
+        </form>
+    </fieldset> 
+</div>

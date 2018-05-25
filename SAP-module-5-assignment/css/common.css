@@ -1,0 +1,74 @@
+.loading-indicator {
+    display: block;
+    width: 70px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 40%;
+    z-index: 100;
+    background-color: #FFF;
+}
+
+.loading-indicator img {
+    width: 70px;
+    background-color: #FFF;
+}
+
+.ui-view-placeholder {
+    margin-top: 60px;
+}
+
+
+ 
+td {
+    padding: 3px;
+}
+
+input {
+    color: black;
+    width: 400px;
+    cursor: pointer;
+}
+
+.ng-touched.ng-valid {
+    border: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+    border: 2px red solid;
+}
+ 
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('../images/Remove.png'); 
+    background-size: 20px 20px; 
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 2px  ;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    min-width:100% !important;
+    padding-left:40px;  
+}
+ 
+
+button[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    width:200px;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
